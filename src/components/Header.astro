@@ -1,0 +1,42 @@
+---
+const navItems = [
+  ['Impact', '#impact'],
+  ['How I Work', '#how-i-work'],
+  ['Case Studies', '#case-studies'],
+  ['Journey', '#journey'],
+  ['Skills', '#skills'],
+  ['Contact', '#contact'],
+];
+---
+
+<header class="site-nav">
+  <div class="nav-shell">
+    <a class="brand" href="#home" aria-label="Maria Isabel Anda home">
+      <span class="brand-mark">M</span>
+      <span>Maria Isabel Anda</span>
+    </a>
+    <nav class="nav-links" id="site-menu" aria-label="Main navigation">
+      {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
+    </nav>
+    <button class="mobile-toggle" type="button" aria-controls="site-menu" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const menu = document.querySelector('#site-menu');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('mobile-open') ?? false;
+    document.body.classList.toggle('nav-open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('mobile-open');
+      document.body.classList.remove('nav-open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

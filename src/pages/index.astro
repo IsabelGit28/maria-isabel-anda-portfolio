@@ -1,0 +1,216 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import Accordion from '../components/Accordion.astro';
+import '../styles/global.css';
+import {
+  aiCards,
+  beyondWork,
+  bringCards,
+  caseStudies,
+  certifications,
+  education,
+  impactCards,
+  journey,
+  principles,
+  roles,
+  skills,
+} from '../data/portfolio';
+
+const resumeHref = '/resume-placeholder.txt';
+const pageTitle = 'Maria Isabel Anda - Senior HR Professional, Organizational Psychologist and People Operations';
+const description = 'Senior HR professional and organizational psychologist with 15+ years across Canada and Latin America, specializing in People Operations, Employee Relations, HR Operations, manager coaching, HR systems, culture, and remote-ready HR support from France.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content="Practical HR systems, fair employee relations, People Operations, manager coaching, culture, and HR infrastructure for growing teams." />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="hero section slant-bottom grain" id="home">
+        <div class="shell hero-grid content-layer">
+          <div>
+            <p class="eyebrow">Senior HR Professional | France-based | Remote-ready</p>
+            <h1>Maria Isabel Anda</h1>
+            <p class="section-text">Senior HR Professional | Organizational Psychologist | People Operations</p>
+          </div>
+          <aside class="hero-card">
+            <p><strong>I help organizations build HR people can trust and leaders can rely on.</strong></p>
+            <p>I am a Senior HR Professional, Organizational Psychologist, and People Operations professional with 15+ years of experience across Canada and Latin America. My work connects employee trust, manager capability, fair employee relations, practical HR systems, compliance, retention, and business performance.</p>
+            <div class="btn-row" style="margin-top: 1.35rem;">
+              <a class="btn btn-primary" href="#contact">Contact me</a>
+              <a class="btn btn-secondary" href="#impact">View HR impact</a>
+              <a class="btn btn-secondary" href={resumeHref} download>Download resume</a>
+            </div>
+            <div class="chip-row">
+              {['15+ years in HR', 'Organizational Psychology', 'Canada + Latin America', 'English + Spanish', 'Remote from France', 'Built HR from 0 to 1', 'Employee Relations', 'People Operations', 'HR Systems'].map((chip) => <span class="chip">{chip}</span>)}
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section light" id="impact">
+        <div class="shell">
+          <SectionHeading eyebrow="HR impact" title="Practical HR work with measurable business impact." text="My strongest work sits at the intersection of people, structure, and business reality: helping managers make fair decisions, improving HR documentation, handling sensitive employee relations matters, creating practical policies, strengthening HR systems, and turning recurring people issues into clear processes." />
+          <div class="metric-grid">
+            {impactCards.map(([metric, context]) => <article class="metric-card"><strong>{metric}</strong><span>{context}</span></article>)}
+          </div>
+          <article class="metric-card" style="margin-top: 1rem;">
+            <strong>Bottom line</strong>
+            <span>I build HR systems that protect fairness, improve consistency, reduce risk, strengthen trust, and make work easier for employees, managers, and the business.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dark grain slant-top" id="what-i-bring">
+        <div class="shell content-layer">
+          <SectionHeading eyebrow="What I bring" title="Fair judgment, practical systems, and people-centered HR." text="I am not interested in HR as paperwork for its own sake. I care about HR that helps people understand expectations, helps managers make better decisions, and helps businesses grow with stronger structure, trust, accountability, and retention." />
+          <div class="card-grid">
+            {bringCards.map(([title, text]) => <article class="info-card"><h3>{title}</h3><p>{text}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark grain" id="how-i-work">
+        <div class="shell content-layer split-grid">
+          <div>
+            <SectionHeading eyebrow="How I work" title="Structured enough to create clarity. Human enough to keep trust." text="I work best when I can understand the real problem, organize the facts, listen to the people involved, and create a practical path forward. My approach is people-centered, but grounded in records, policies, procedures, fairness, and common sense." />
+            <div class="quote-card">Documentation is not bureaucracy. Done well, it is fairness, memory, protection, and clarity.</div>
+          </div>
+          <div class="principle-list">
+            {principles.map(([title, text]) => <div class="principle"><strong>{title}</strong><span>{text}</span></div>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section light" id="case-studies">
+        <div class="shell">
+          <SectionHeading eyebrow="Proof of work" title="HR systems, employee relations, and people operations I have built and improved." text="These examples show how I turn business needs, people challenges, and operational gaps into practical HR structure, stronger documentation, better systems, and fairer processes." />
+          <div class="case-grid">
+            {caseStudies.map((study) => (
+              <article class="case-card">
+                <div>
+                  <h3>{study.title}</h3>
+                  <div class="tag-row">{study.tags.map((tag) => <span class="tag">{tag}</span>)}</div>
+                  <p>{study.overview}</p>
+                </div>
+                <div>
+                  <p><strong>Results:</strong> {study.result}</p>
+                  <p><strong>What this proves:</strong> {study.proves}</p>
+                  <div class="visual-placeholder">{study.visual}</div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div class="accordion-list">
+            <details>
+              <summary>View detailed Topax HR buildout</summary>
+              <div class="details-body">
+                <p>Employment letters, offer letters, memorandums, HR forms, recruitment workflows, job descriptions, performance management tools, policies, payroll reports, vacation records, benefits programs, training coordination, health and safety documentation, culture checks, town hall support, and cross-functional business documentation.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark grain" id="journey">
+        <div class="shell content-layer">
+          <SectionHeading eyebrow="Professional journey" title="From Ecuador to Canada to France, building HR across cultures and workplaces." text="My career has been shaped by international moves, different work cultures, and the challenge of building structure in real workplaces. That path helped me become adaptable, practical, people-centered, and comfortable supporting teams through change." />
+          <Accordion items={journey} />
+        </div>
+      </section>
+
+      <section class="section light" id="ai-systems">
+        <div class="shell">
+          <SectionHeading eyebrow="AI and systems" title="I use technology to reduce friction, not replace judgment." text="I am tech-savvy and use AI as a practical support tool for research, writing, documentation, planning, job-search organization, and workflow design. In HR, judgment, confidentiality, context, and fairness still matter most." />
+          <div class="card-grid">
+            {aiCards.map(([title, text]) => <article class="info-card"><h3>{title}</h3><p>{text}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section light" id="skills">
+        <div class="shell">
+          <SectionHeading eyebrow="Skills snapshot" title="Core strengths for remote HR roles." />
+          <div class="skills-grid">
+            {skills.map(([title, text]) => <article class="info-card"><h3>{title}</h3><p>{text}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section light" id="experience">
+        <div class="shell">
+          <SectionHeading eyebrow="Experience" title="15+ years across HR operations, employee relations, systems, and people support." />
+          <div class="experience-list">
+            {roles.map(([role, company, dates, summary]) => (
+              <div class="role-row">
+                <div><strong>{role}</strong><small>{company} | {dates}</small></div>
+                <p>{summary}</p>
+              </div>
+            ))}
+          </div>
+          <div class="btn-row" style="margin-top: 2rem;"><a class="btn btn-primary" href={resumeHref} download>Download full resume</a></div>
+        </div>
+      </section>
+
+      <section class="section dark grain" id="education">
+        <div class="shell content-layer split-grid">
+          <div>
+            <SectionHeading eyebrow="Education and certifications" title="HR, business, psychology, leadership, and safety foundation." />
+          </div>
+          <div class="card-grid" style="grid-template-columns: 1fr; margin-top: 0;">
+            <article class="info-card">
+              <h3>Education</h3>
+              {education.map(([credential, school, year]) => <p><strong>{credential}</strong><br />{school} | {year}</p>)}
+            </article>
+            <article class="info-card">
+              <h3>Certifications</h3>
+              {certifications.map(([credential, year]) => <p><strong>{credential}</strong> | {year}</p>)}
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section light" id="beyond-work">
+        <div class="shell">
+          <SectionHeading eyebrow="Beyond work" title="The person behind the HR work." text="I care about fairness, facts, good values, love, common sense, and treating people with dignity. My work in HR is connected to those values: I believe people deserve clarity, and businesses need fair systems that help everyone work better." />
+          <p class="section-text">Outside work, I am interested in sports, AI, technology, energy, useful inventions, creating, and designing better systems. I am currently building a new life in France with my wife, learning French, and looking for a remote HR role where I can keep growing while contributing meaningfully.</p>
+          <div class="card-grid">
+            {beyondWork.map(([title, text]) => <article class="info-card"><h3>{title}</h3><p>{text}</p></article>)}
+          </div>
+        </div>
+      </section>
+
+      <section class="section dark grain" id="contact">
+        <div class="shell content-layer contact-grid">
+          <div>
+            <SectionHeading eyebrow="Let's connect" title="I am open to fully remote HR roles." text="I am currently based in France and looking for a fully remote HR role where I can bring senior HR judgment, organizational psychology, employee relations experience, People Operations structure, manager coaching, HR systems thinking, culture-building, and practical business support to a global, European, Canadian, US, or remote-first team." />
+            <p class="section-text">If you are hiring for HR Business Partner, People Operations, HR Generalist, HR Operations, Employee Relations, HRIS, or Learning and Development roles, I would be happy to connect.</p>
+            <div class="btn-row" style="margin-top: 1.6rem;">
+              <a class="btn btn-primary" href="mailto:isabel.av2428@gmail.com">Email me</a>
+              <a class="btn btn-secondary" href="https://linkedin.com/in/mariaisabelanda/" target="_blank" rel="noreferrer">View LinkedIn</a>
+              <a class="btn btn-secondary" href={resumeHref} download>Download resume</a>
+            </div>
+          </div>
+          <aside class="contact-card">
+            <a href="mailto:isabel.av2428@gmail.com">isabel.av2428@gmail.com</a>
+            <a href="tel:+33665958163">+33 6 65 95 81 63</a>
+            <a href="https://linkedin.com/in/mariaisabelanda/" target="_blank" rel="noreferrer">linkedin.com/in/mariaisabelanda/</a>
+          </aside>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

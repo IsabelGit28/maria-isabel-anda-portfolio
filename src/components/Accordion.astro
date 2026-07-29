@@ -1,0 +1,24 @@
+---
+interface Item {
+  title: string;
+  summary?: string;
+  detail: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="accordion-list">
+  {items.map((item) => (
+    <details>
+      <summary>{item.title}{item.summary ? ` - ${item.summary}` : ''}</summary>
+      <div class="details-body">
+        <p>{item.detail}</p>
+      </div>
+    </details>
+  ))}
+</div>
