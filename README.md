@@ -1,6 +1,6 @@
-# Maria Isabel Anda Portfolio Website
+# Maria Isabel Anda Varela Portfolio Website
 
-Astro static portfolio website for Maria Isabel Anda's fully remote HR job search.
+Astro static portfolio website for Maria Isabel Anda Varela's fully remote HR job search.
 
 ## Local Development
 

@@ -1,4 +1,4 @@
-# Maria Isabel Anda Portfolio Design System
+# Maria Isabel Anda Varela Portfolio Design System
 
 This site adapts the Aura Builder export into a senior HR portfolio visual language: premium, warm, practical, systems-minded, and human.
 
