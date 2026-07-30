@@ -11,16 +11,18 @@ This site adapts the Aura Builder export into a senior HR portfolio visual langu
 
 ## Colors
 
-- Ink background: `#0C1208`
-- Deep green background: `#141C0F`
-- Cream surface: `#F0F4EC`
-- Stone surface: `#DDE8D4`
-- Accent green: `#4A8C2A`
-- Accent lime: `#6DB33F`
-- Dark text: `#111A0C`
-- Light text: `#F4FAF0`
-- Dark muted text: `#64745A`
-- Light muted text: `#A8BA9C`
+- Ink background: `#2A0E1D`
+- Deep burgundy background: `#641A32`
+- Cream surface: `#FFF3EE`
+- Warm peach surface: `#F2C9BA`
+- Accent rose: `#C84562`
+- Accent coral: `#E06F56`
+- Dark text: `#2A0E1D`
+- Light text: `#FFF6F2`
+- Dark muted text: `#7B4B48`
+- Light muted text: `#E8B7AC`
+
+The core gradient direction comes from the LinkedIn banner: burgundy and rose on the left, warming into coral and peach on the right.
 
 ## Typography
 
